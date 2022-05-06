@@ -12,9 +12,9 @@ Access to the HPC cluster command line (e.g. via PuTTY)
 
 Access to the HPC Cluster workspace (e.g. via Filezilla)
 
-Several R package, especially plantspec (https://github.com/griffithdan/plantspec), asdreader (https://cran.r-project.org/web/packages/asdreader/) and Hmisc (https://cran.r-project.org/web/packages/Hmisc/), but see the R scripts for a complete list. 
+Several R packages, especially plantspec (https://github.com/griffithdan/plantspec), asdreader (https://cran.r-project.org/web/packages/asdreader/) and Hmisc (https://cran.r-project.org/web/packages/Hmisc/), but see the R scripts for a complete list. 
 
-A toolchain built for R (e.g. via Easybuild). If you are unsure how to do this, ask an adult (i.e. server admin) to help you. 
+A toolchain built for R (e.g. via Easybuild). 
 
 ## Data preparation
 In this step the dataset will be prepared for calibration on a local PC. Input files consist of one folder containing NIRS Spectra and two datatables, *samples.csv* and and *traits.csv*. The *prep_cluster.R* will take this data, process it and output a handy *prep_workspace.rda* file to upload to the server. 
