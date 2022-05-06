@@ -10,4 +10,5 @@ finalMatrix <- foreach(i=1:resno, .combine=rbind) %do%{ # write the finalmatrix 
 	return(Optimized_Par) 
 }
 
-saveRDS(finalMatrix, file=file.path(input_dir,"finalmatrix.rds"))
+#save the merged RDS file to the input_dir
+saveRDS(finalMatrix, file=file.path(input_dir,"finalmatrix.rds")) 

@@ -1,5 +1,6 @@
 ### Calibration script ###
-load("/home/user/prep_workspace.rda")
+#load the workspace uploaded from the local PC
+load("/home/user/prep_workspace.rda") 
 
 # Loading Libraries
 suppressPackageStartupMessages(library(plantspec))
@@ -14,11 +15,13 @@ suppressPackageStartupMessages(library(spectacles))
 options(max.print=2000)
 sessionInfo()
 
+#use commandArgs to let R use comments included with the submit script
 args <- commandArgs(trailingOnly=TRUE)
 input_dir <- args[1]
 output <- args[2]
 seed <- args[3]
 
+#set a random number seed for reproducibility
 set.seed(seed)
 
 ##### Step 1:  Define operation folders #####
@@ -45,7 +48,7 @@ wavesequence <- seq(from =minimum_frequence+minimum_segment, to=maximum_frequenc
 # Select number of parallel tested iteration (number of parallel cores)
 # Creating Cluster for parallel computing
 
-print(paste("Processing begins" , Sys.time()))
+print(paste("Processing begins" , Sys.time())) #write the start time into the log
 
 
 # Create random sequence of NIR regions within the preset parameter
@@ -77,4 +80,4 @@ parallel = FALSE)               # using parallel = TRUE is currently not support
 print(paste("Optimize Par" , Sys.time()))
 
 
-saveRDS(Optimized_Par, file=output)
+saveRDS(Optimized_Par, file=output) #save the optimizedPar model to /work/user/
